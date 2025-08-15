@@ -111,6 +111,10 @@ module Images
     end
 
     def self.get_imgproxy_endpoint
+      
+      endpoint = ApplicationConfig["IMGPROXY_ENDPOINT"]
+      return endpoint if endpoint.present?
+
       if Rails.env.production?
         # Use /images with the same domain on Production as
         # our default configuration
