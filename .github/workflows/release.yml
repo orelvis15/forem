@@ -14,8 +14,9 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      packages: write
+      contents: write    # Para crear releases y tags
+      packages: write    # Para subir a GHCR
+      actions: read      # Para leer metadatos del workflow
 
     steps:
       - name: Checkout repository
@@ -41,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          target: production  # 👈 Usar solo el target production
+          target: production
           platforms: linux/amd64
           push: true
           tags: |
@@ -53,19 +54,33 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.extract.outputs.version }}
           name: Forem Wasabi v${{ steps.extract.outputs.version }}
           body: |
             ## 🚀 Forem with Wasabi S3 Support v${{ steps.extract.outputs.version }}
             
+            Built from commit: ${{ github.sha }}
+            
             ### Features
             - ✅ Full Forem functionality
-            - ✅ Wasabi S3-compatible storage support
+            - ✅ Wasabi S3-compatible storage support via AWS_S3_ENDPOINT
             - ✅ Built with official Forem build process
+            - ✅ Multi-stage optimized Docker build
             
             ### Docker Image
             ```bash
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.extract.outputs.version }}
             ```
+            
+            ### Environment Variables for Wasabi
+            ```bash
+            AWS_S3_ENDPOINT=https://s3.wasabisys.com
+            AWS_ID=your_wasabi_access_key
+            AWS_SECRET=your_wasabi_secret_key
+            AWS_BUCKET_NAME=your_bucket_name
+            AWS_UPLOAD_REGION=us-east-1
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
