@@ -1,0 +1,92 @@
+---
+es:
+  devise:
+    confirmations:
+      confirmed: "Tu dirección de correo electrónico ha sido confirmada exitosamente."
+      send_instructions: "Recibirás un correo electrónico con instrucciones para confirmar tu dirección de correo en unos minutos."
+      send_paranoid_instructions: "Si tu dirección de correo existe en nuestra base de datos, recibirás un correo con instrucciones para confirmarla en unos minutos."
+    failure:
+      already_authenticated: "Ya has iniciado sesión."
+      inactive: "Tu cuenta aún no está activada."
+      invalid: "No se pudo iniciar sesión."
+      last_attempt: "Tienes un intento más antes de que tu cuenta sea bloqueada."
+      locked: "No se pudo iniciar sesión."
+      not_found_in_database: "No se pudo iniciar sesión."
+      timeout: "Tu sesión expiró. Por favor inicia sesión de nuevo para continuar."
+      unauthenticated: "Necesitas iniciar sesión o registrarte antes de continuar."
+      unconfirmed: "Debes confirmar tu dirección de correo electrónico antes de continuar."
+      magic_link_invalid: "Enlace de inicio de sesión inválido o expirado."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucciones de confirmación"
+      email_changed:
+        subject: "Correo electrónico cambiado"
+      password_change:
+        subject: "Contraseña cambiada"
+      reset_password_instructions:
+        subject: "Instrucciones para restablecer contraseña"
+      unlock_instructions:
+        subject: "Instrucciones de desbloqueo"
+      magic_link:
+        subject: "Aquí tienes tu enlace mágico de inicio de sesión ✨"
+    omniauth_callbacks:
+      failure: "No se pudo autenticarte desde %{kind} debido a \"%{reason}\"."
+      success: "Autenticación exitosa desde la cuenta de %{kind}."
+    passwords:
+      no_token: "No puedes acceder a esta página sin venir desde un correo de restablecimiento de contraseña. Si vienes desde un correo de restablecimiento, por favor asegúrate de usar la URL completa proporcionada."
+      reset_instructions_sent: "Se han enviado las instrucciones para restablecer tu contraseña."
+      reset_password:
+        email_placeholder: "tu@correo.com"
+        forgot_password: "Envíame un enlace de inicio de sesión"
+        forgot_password_description: "Ingresa la dirección de correo asociada con tu cuenta, y te enviaremos un enlace único o restablecimiento de contraseña."
+        go_back: "Regresar"
+        send_reset_link_button: "Enviar enlace de restablecimiento"
+      send_instructions: "Recibirás un correo con instrucciones sobre cómo restablecer tu contraseña en unos minutos."
+      send_paranoid_instructions: "Si tu dirección de correo existe en nuestra base de datos, recibirás un enlace de recuperación en unos minutos."
+      updated: "Tu contraseña ha sido cambiada exitosamente. Ahora has iniciado sesión."
+      updated_not_active: "Tu contraseña ha sido cambiada exitosamente."
+    registrations:
+      agreement:
+        sign_in_html: "Al iniciar sesión, estás aceptando nuestra <a href=\"%{privacy_path}\">política de privacidad</a>, <a href=\"%{terms_path}\">términos de uso</a> y <a href=\"%{code_of_conduct_path}\">código de conducta</a>."
+        sign_up_html: "Al registrarte, estás aceptando nuestra <a href=\"%{privacy_path}\">política de privacidad</a>, <a href=\"%{terms_path}\">términos de uso</a> y <a href=\"%{code_of_conduct_path}\">código de conducta</a>."
+      already_have_an_account_html: "¿Ya tienes una cuenta? <a href=\"%{sign_up_path}\">Iniciar sesión</a>."
+      create_account_html: "¿Nuevo en %{community_name}? <a href=\"%{sign_up_path}\">Crear cuenta</a>."
+      destroyed: "¡Adiós! Tu cuenta ha sido cancelada exitosamente. Esperamos verte de nuevo pronto."
+      errors:
+        bummer: "Lamentamos las molestias..."
+        mobile_app_no_new_account_html: "Desafortunadamente, no soportamos la creación de nuevas cuentas en nuestra aplicación móvil en este momento. Si quieres crear una nueva cuenta para unirte a %{community_name}, por favor hazlo en la web en <a href=\"%{path}\">%{path}></a>"
+      invite_only_disclaimer_html: "Dado que esta es una comunidad solo por invitación, no puedes unirte sin una invitación. Si deseas solicitar una invitación, por favor contacta al administrador de la comunidad en %{contact_link}"
+      or: "O"
+      signed_up: "¡Bienvenido! Te has registrado exitosamente."
+      signed_up_but_inactive: "Te has registrado exitosamente. Sin embargo, no pudimos iniciarte sesión porque tu cuenta aún no está activada."
+      signed_up_but_locked: "Te has registrado exitosamente. Sin embargo, no pudimos iniciarte sesión porque tu cuenta está bloqueada."
+      signed_up_but_unconfirmed: "Se ha enviado un mensaje con un enlace de confirmación a tu dirección de correo. Por favor sigue el enlace para activar tu cuenta."
+      title:
+        invite_only_commuty: "%{community_name} es solo por invitación."
+        join_community: "Únete a %{community_name}"
+        welcome_back_community: "Únete a %{community_name}"
+      update_needs_confirmation: "Actualizaste tu cuenta exitosamente, pero necesitamos verificar tu nueva dirección de correo. Por favor revisa tu correo y sigue el enlace de confirmación."
+      updated: "Tu cuenta ha sido actualizada exitosamente."
+      updated_but_not_signed_in: "Tu cuenta ha sido actualizada exitosamente, pero como tu contraseña fue cambiada, necesitas iniciar sesión de nuevo."
+    sessions:
+      already_signed_out: "Sesión cerrada exitosamente."
+      signed_in: "Sesión iniciada exitosamente."
+      signed_out: "Sesión cerrada exitosamente."
+    unlocks:
+      send_instructions: "Recibirás un correo con instrucciones para desbloquear tu cuenta en unos minutos."
+      send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo con instrucciones para desbloquearla en unos minutos."
+      unlocked: "Tu cuenta ha sido desbloqueada exitosamente. Por favor inicia sesión para continuar."
+    passwordless:
+      not_found_in_database: "No se pudo encontrar un usuario para esa dirección de correo"
+      magic_link_sent: "Se ha enviado un enlace de inicio de sesión a tu dirección de correo. Por favor sigue el enlace para acceder a tu cuenta."
+      magic_link_sent_paranoid: "Si tu cuenta existe, recibirás un correo con un enlace de inicio de sesión. Por favor sigue el enlace para acceder a tu cuenta."
+  errors:
+    messages:
+      already_confirmed: "ya fue confirmado, por favor intenta iniciar sesión"
+      confirmation_period_expired: "debe ser confirmado dentro de %{period}, por favor solicita uno nuevo"
+      expired: "ha expirado, por favor solicita uno nuevo"
+      not_found: "no encontrado"
+      not_locked: "no estaba bloqueado"
+      not_saved:
+        one: "1 error impidió que este %{resource} fuera guardado:"
+        other: "%{count} errores impidieron que este %{resource} fuera guardado:"
