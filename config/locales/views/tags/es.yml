@@ -35,7 +35,7 @@ es:
             placeholder: Esta es una sección de 'acerca de'. Siéntete libre de agregar un FAQ, recursos adicionales, etc.
           rules_markdown:
             label: Reglas en formato markdown
-            placeholder: Opcional: se puede utilizar para desafíos, es decir, pautas de presentación.
+            placeholder: "Opcional: se puede utilizar para desafíos, es decir, pautas de presentación."
           submit: Guardar
       follow: Seguir
       hide: Ocultar
@@ -46,20 +46,20 @@ es:
       hidden_tags: Etiquetas ocultas
       moderator:
         text_html: "separados por comas, el espacio es opcional. Ejemplo: %{code}"
-        code: 123
+        code: "123"
         placeholder: "separados por comas, el espacio es opcional. Ejemplo: 1,2,3"
       published:
         one: 1 publicación
         other: "%{count} publicaciones"
       sidebar:
-        about: 'acerca de #%{tag}'
+        about: "acerca de #%{tag}"
         admin: Admin
         edit: Editar
         guidelines: pautas de presentación
         moderate: Moderar
         mods: moderadores de etiquetas
         new: Crear publicación
-        older: 'Publicaciones más antiguas de #%{tag}'
+        older: "Publicaciones más antiguas de #%{tag}"
         published:
           one: 1 publicación publicada
           other: "%{count} publicaciones publicadas"
