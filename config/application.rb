@@ -77,6 +77,8 @@ module PracticalDeveloper
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml")]
 
     config.i18n.fallbacks = [:en]
+    config.i18n.default_locale = :es
+    config.i18n.available_locales = %i[es en]
 
     # Authorization / Authentication exception handling.
     config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :not_found
