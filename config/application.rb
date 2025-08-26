@@ -76,7 +76,7 @@ module PracticalDeveloper
 
     config.i18n.load_path += Dir[Rails.root.join("config/locales/**/*.yml")]
 
-    config.i18n.fallbacks = [:en]
+    config.i18n.fallbacks = { es: [:es, :en], en: [:en] }
     config.i18n.default_locale = :es
     config.i18n.available_locales = %i[es en]
 
