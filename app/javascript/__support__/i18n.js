@@ -3,7 +3,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 
 //Read the Yaml file
-const locale = './config/locales/en.yml';
+const locale = './config/locales/es.yml';
 const data = fs.readFileSync(locale, 'utf8');
 const yamlData = yaml.load(data);
 

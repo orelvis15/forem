@@ -294,7 +294,7 @@ class ApplicationController < ActionController::Base
   end
 
   def determine_locale
-    I18n.locale = if %w[en fr].include?(params[:locale])
+    I18n.locale = if %w[en fr es].include?(params[:locale])
                     params[:locale]
                   else
                     Settings::UserExperience.default_locale
