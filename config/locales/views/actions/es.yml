@@ -1,12 +1,13 @@
+---
 es:
   views:
     actions:
       copy:
-        text: Copiado al portapapeles
+        text: Copiado al Portapapeles
         button: Copiar enlace
       more:
         title: Más...
-        aria_label: Opciones para compartir la publicación
+        aria_label: Opciones para compartir publicación
       share:
         facebook:
           text: Compartir en Facebook
@@ -19,7 +20,7 @@ es:
         reddit:
           text: Compartir en Reddit
         twitter:
-          text: Compartir en Twitter
+          text: Compartir en X
           query: '"%{article}" por %{author}'
-        link: Compartir publicación a través de...
-        report: Informar abuso
+        link: Compartir Publicación vía...
+        report: Reportar Abu

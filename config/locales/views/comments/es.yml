@@ -9,96 +9,97 @@ es:
           title: Discusión de %{title}
           title_rel: "%{root} — %{site}"
           title_root: "[Discusión] %{title} — %{site}"
-          description: Comentario en %{site}
+          description: "Comentario de %{site}"
       parent:
         subtitle_html: "%{start}Discusión sobre: %{end}%{title}"
         metadata_html: "%{name}%{on}"
         date: " el %{date}"
         full: Discusión completa
-        read: Leer el post completo
-        view: Ver post
+        read: Leer publicación completa
+        view: Ver publicación
         view_full:
-          one: Ver toda la discusión (%{count} comentario)
-          other: Ver toda la discusión (%{count} comentarios)
+          one: Ver discusión completa (%{count} comentario)
+          other: Ver discusión completa (%{count} comentarios)
         reply_html: "%{start}Respuestas para:%{end} %{title}"
       delete:
-        heading: ¿Estás seguro de que deseas eliminar este comentario?
-        desc_html: No puedes deshacer esta acción, ¿quizás prefieres %{action} en su lugar?
-        action: editar
+        heading: ¿Estás seguro de que quieres eliminar este comentario?
+        desc_html: No puedes deshacer esta acción, ¿tal vez solo quieres %{action} en su lugar?
+        action: Editar
         submit: Eliminar
         edit: Editar
         cancel: Descartar
         comment_deleted: Comentario eliminado
-      collapse: Colapsar
+      collapse: Contraer
       edit: Editando comentario
       edited:
         text_html: "&bull; Editado el %{date}"
         short_html: "&bull; Editado"
       expand: Expandir
       visible_signed_in:
-        text_html: "Algunos comentarios solo pueden ser visibles para visitantes que han iniciado sesión. %{sign_in} para ver todos los comentarios."
+        text_html: "Algunos comentarios solo pueden ser visibles para visitantes con sesión iniciada. %{sign_in} para ver todos los comentarios."
         sign_in: "Iniciar sesión"
       hidden:
-        text_html: Algunos comentarios han sido ocultados por el autor del post - %{info}
-        info: obtener más información
-        comment_hidden: Comentario oculto por el autor del post
+        text_html: Algunos comentarios han sido ocultos por el autor de la publicación - %{info}
+        info: saber más
+        comment_hidden: Comentario oculto por el autor de la publicación
       hider:
-        description_html: ¿Estás seguro de que deseas ocultar este comentario? Se ocultará en tu post, pero seguirá siendo visible a través del %{permalink} del comentario.
-        hide_child: Ocultar también los comentarios hijos
-        note_html: Para acciones adicionales, considera bloquear a esta persona y/o %{reporting}
-        permalink: permalink
+        description_html: ¿Estás seguro de que quieres ocultar este comentario? Se ocultará en tu publicación, pero seguirá siendo visible a través del %{permalink} del comentario.
+        hide_child: Ocultar comentarios secundarios también
+        note_html: Para acciones adicionales, puedes considerar bloquear a esta persona y/o %{reporting}
+        permalink: enlace permanente
         reporting: reportar abuso
         submit: Confirmar
-      locked: La discusión ha sido bloqueada. No se pueden añadir nuevos comentarios.
+      locked: La discusión ha sido bloqueada. No se pueden agregar nuevos comentarios.
       orphan:
-        deleted: "[Comentario de un post eliminado]"
+        deleted: "[Comentario de una publicación eliminada]"
       re:
         text_html: "%{re}%{title}"
         re: 'Re: '
       settings:
         meta:
-          title: Configuración de comentarios
-        heading: Configuración de comentarios
+          title: Configuración de Comentarios
+        heading: Configuración de Comentarios
         state:
           show:
             subtitle: Mostrando notificaciones de hilo
             desc: Recibirás todas las notificaciones para este comentario y cualquiera de tus comentarios en esta cadena.
           mute:
-            subtitle: Desactivar notificaciones de hilo
-            desc: Todas las notificaciones para este comentario y cualquiera de tus comentarios en el hilo están actualmente desactivadas.
+            subtitle: Silenciando notificaciones de hilo
+            desc: Todas las notificaciones para este comentario y cualquiera de tus comentarios en el hilo están actualmente silenciadas.
         subscribe:
           subtitle: Suscripción
-          desc: Aún estás suscrito a todos los comentarios en el hilo más amplio, lo que significa que seguirás recibiendo notificaciones por respuestas a este comentario.
-          mute: Desactivar notificaciones
+          desc: Aún estás suscrito a todos los comentarios en el hilo más amplio, lo que significa que seguirás recibiendo notificaciones para respuestas a este comentario.
+          mute: Silenciar notificaciones
           unmute: Activar notificaciones
       quality:
         low: Comentario marcado como de baja calidad/no constructivo por la comunidad.
+        superlow: Puntuación de comentario por debajo del umbral de ocultación, mostrado solo para administradores
         conduct: Ver Código de Conducta
         hidden:
-          icon: Información
+          icon: Info
           text:
-            visible_in_permalink: Comentario oculto por el autor del post - hilo solo visible en este enlace permanente
-            accessible_via_permalink: Comentario oculto por el autor del post - hilo solo accesible a través del enlace permanente
+            visible_in_permalink: Comentario oculto por el autor de la publicación - hilo solo visible en este enlace permanente
+            accessible_via_permalink: Comentario oculto por el autor de la publicación - hilo solo accesible vía enlace permanente
       write:
         errors:
-          one: '1 error prohibió que este comentario se guardara:'
-          other: "%{count} errores prohibieron que este comentario se guardara:"
+          one: '1 error impidió que este comentario fuera guardado:'
+          other: "%{count} errores impidieron que este comentario fuera guardado:"
         field:
-          aria_label: Añadir un comentario a la discusión
-          placeholder: Añadir a la discusión
+          aria_label: Agregar un comentario a la discusión
+          placeholder: Agregar a la discusión
           submit: Subir
           templates: Plantillas
           upload: Subir imagen
-          use: Utilizar una plantilla de respuesta
+          use: Usar una plantilla de respuesta
           guide:
             title: Guía de Markdown
             icon: Guía del editor
         template:
-          article: Este post viene con una plantilla de comentario
+          article: Esta publicación viene con una plantilla de comentario
           create:
             subtitle: Crear plantilla
-            desc: Las plantillas te permiten responder rápidamente a preguntas frecuentes o almacenar fragmentos para reutilizarlos.
-          moderator: Usuario de confianza
+            desc: Las plantillas te permiten responder rápidamente preguntas frecuentes o almacenar fragmentos para reutilizar.
+          moderator: Usuario Confiable
           personal: Personal
         submit: Enviar
         preview: Vista previa
@@ -110,7 +111,7 @@ es:
           aria_label: Copiar enlace al comentario de %{user}
           text: Copiar enlace
         settings:
-          aria_label: Ir a la configuración del comentario de %{user}
+          aria_label: Ir a la configuración de comentarios de %{user}
         action:
           aria_label: "%{action} comentario de %{user}"
           hide: Ocultar
@@ -123,9 +124,9 @@ es:
           aria_label: Reportar comentario de %{user} como abusivo o que viola nuestro código de conducta y/o términos y condiciones
       footer:
         heart:
-          aria_label: Me gusta
+          aria_label: me gusta
           title: Me gusta
-          icon: 'Me gusta el comentario: '
+          icon: 'Me gusta comentario: '
           count_html: "%{num}%{likes}"
           text: Me gusta
         reply:
@@ -138,16 +139,16 @@ es:
           icon: Hilo
           text: Hilo
         view:
-          icon: Botón de vista
-          text: Vista
+          icon: Botón ver
+          text: Ver
         subscribe:
-          icon: Botón de suscripción
-          text: Suscribirse a los comentarios
+          icon: Botón suscribirse
+          text: Suscribirse a comentarios
       count:
         one: "%{count} comentario"
         other: "%{count} comentarios"
       empty: Nuevo
-      add: "Añadir\_comentario"
+      add: "Agregar\_Comentario"
       summary:
         count_html:
           one: "%{count}%{start}\_comentario%{end}"

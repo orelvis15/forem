@@ -9,18 +9,18 @@ es:
         mobile:
           posts: Publicaciones (%{num})
           followers: Seguidores (%{num})
-          following_tags: Siguiendo etiquetas (%{num})
-          following_users: Siguiendo usuarios (%{num})
-          following_orgs: Siguiendo organizaciones (%{num})
-          following_pods: Siguiendo podcasts (%{num})
+          following_tags: Etiquetas seguidas (%{num})
+          following_users: Usuarios seguidos (%{num})
+          following_orgs: Organizaciones seguidas (%{num})
+          following_pods: Podcasts seguidos (%{num})
           hidden_tags: Etiquetas ocultas (%{num})
         posts: Publicaciones
         series: Series
         followers: Seguidores
-        following_tags: Siguiendo etiquetas
-        following_users: Siguiendo usuarios
-        following_orgs: Siguiendo organizaciones
-        following_pods: Siguiendo podcasts
+        following_tags: Etiquetas seguidas
+        following_users: Usuarios seguidos
+        following_orgs: Organizaciones seguidas
+        following_pods: Podcasts seguidos
         hidden_tags: Etiquetas ocultas
         listings: Listados
         analytics: Analíticas
@@ -29,12 +29,10 @@ es:
       analytics:
         meta:
           title: Analíticas
-        heading: Panel de Analíticas para %{name}
-        desc_1: Bienvenido al Panel de Analíticas, el hogar de métricas de usuarios detalladas para que los autores puedan tomar decisiones basadas en datos sobre el ecosistema %{members}.
-        desc_2: Este panel destaca información profunda especialmente relevante para las relaciones %{members}, autores y blogueros serios.
-        back: "👈 Volver al Panel Principal"
+        heading: Analíticas para %{name}
+        back: "Volver al Panel Principal"
         your: Tu Panel
-        org: "Panel de Analíticas para %{org}"
+        org: "Panel de Analíticas de %{org}"
       article:
         heading:
           text_html: "%{archived}%{title}"
@@ -44,8 +42,8 @@ es:
         published_html: 'Publicado: %{date}'
         edited: 'Editado:'
         edited_html: 'Editado: %{date}'
-        series: 'Series:'
-        series_html: "<strong>Series:</strong> %{series}"
+        series: 'Serie:'
+        series_html: "<strong>Serie:</strong> %{series}"
         draft: Borrador
         scheduled: Programado
         scheduled_at: 'Programado:'
@@ -74,28 +72,28 @@ es:
           title: Suscripciones
           icon: Datos
           number: Suscripciones (%{num})
-        delete: Borrar
+        delete: Eliminar
         unpin: Desanclar
         pin:
           title: Anclar al perfil
           button: Anclar al perfil
           text: Anclar
         manage:
-          aria_label: 'Administrar publicación: %{title}'
-          text: Administrar
+          aria_label: 'Gestionar publicación: %{title}'
+          text: Gestionar
         lock: Bloquear discusión
         unlock: Desbloquear discusión
         edit:
           aria_label: 'Editar publicación: %{title}'
           text: Editar
         more:
-          title: 'Más opciones para publicación: %{title}'
+          title: 'Más opciones para la publicación: %{title}'
           icon: Más...
         stats: Estadísticas
         archive: Archivar publicación
         unarchive: Desarchivar publicación
         author: Autor
-        co_authors: Coautores
+        co_authors: Co-autores
         series_author_change_warning: No se permiten cambios de autor para publicaciones de series.
         icon: Detalles
         author_is: 'AUTOR: '
@@ -103,19 +101,19 @@ es:
         submit: Enviar cambio de autor
       followers:
         heading: Panel » Seguidores
-        empty: Todavía no tienes seguidores...
+        empty: Aún no tienes seguidores...
       following_orgs:
-        heading: Panel » Siguiendo organizaciones
-        empty: Todavía no sigues ninguna organización...
+        heading: Panel » Organizaciones seguidas
+        empty: Aún no sigues ninguna organización...
       following_pods:
-        heading: Panel » Siguiendo podcasts
-        empty: Todavía no sigues ningún podcast...
+        heading: Panel » Podcasts seguidos
+        empty: Aún no sigues ningún podcast...
       following_tags:
-        heading: Panel » Siguiendo etiquetas
+        heading: Panel » Etiquetas seguidas
         empty_html: "<span>Sigue etiquetas para personalizar tu feed. Puedes explorar etiquetas populares <a href=%{link}>aquí</a></span>."
       following_users:
-        heading: Panel » Siguiendo usuarios
-        empty: Todavía no sigues a ningún usuario...
+        heading: Panel » Usuarios seguidos
+        empty: No sigues a ningún usuario...
       hidden_tags:
         heading: Panel » Etiquetas ocultas
         empty_html: "<span>No tienes etiquetas ocultas...</span>"
@@ -130,14 +128,16 @@ es:
           title: Panel de Listados
       posts:
         heading: Publicaciones
-        archived: Mostrar archivadas
+        archived: Mostrar archivados
+        statuses: Mostrar publicaciones rápidas
+        full: Mostrar publicaciones completas
         option:
-          creation-desc: Recientemente creadas
-          published-desc: Recientemente publicadas
-          views-desc: Más vistas
-          reactions-desc: Más reacciones
-          comments-desc: Más comentarios
-          aria_label: Ordenar por
+          creation-desc: Creados Recientemente
+          published-desc: Publicados Recientemente
+          views-desc: Más Vistas
+          reactions-desc: Más Reacciones
+          comments-desc: Más Comentarios
+          aria_label: Ordenar Por
         org: "%{name} (%{num})"
         personal: Personal
         empty:
@@ -150,10 +150,11 @@ es:
         subhead:
           text_html: "%{for} %{source}"
           for: para
-        empty: Todavía no tienes suscriptores para este(a) %{kind}...
+        empty: Aún no tienes suscriptores para este %{kind}...
       summary:
-        reactions: Total de reacciones a publicaciones
+        reactions: Total de reacciones de publicaciones
         views: Total de vistas de publicaciones
+        comments: Total de comentarios de publicaciones
         listings: Listados creados
         credits: Créditos disponibles
         lt_500: "< 500"
