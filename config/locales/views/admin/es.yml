@@ -270,54 +270,54 @@ es:
             revoke_confirm: ¿Estás seguro de que deseas eliminar a %{user} de %{org}?
             submit: Enviar
           roles:
-              subtitle: Roles
-              aria_learn: Obtén más información sobre roles
-              icon: Roles
-              desc: "Concede permisos a este miembro asignándole un rol. "
-              empty: Aún no se han asignado roles.
-              button: Asignar rol
-              locked: No puedes quitar este rol.
-              remove: "Quitar rol:"
-              remove_confirm: ¿Estás seguro?
-              remove_confirm_super_admin: Estás quitando el acceso de superadministrador a esta cuenta. Hazlo con cuidado y asegúrate siempre de conservar el acceso a una o más cuentas de superadministrador.
-              name:
-                admin: Admin
-                codeland_admin: Codeland Admin
-                comment_suspended: Comentario suspendido
-                limited: Limitado
-                creator: Creador
-                super_moderator: Super Moderador
-                podcast_admin: Podcast Admin
-                restricted_liquid_tag: Etiqueta de líquido restringida
-                single_resource_admin: Administrador de recurso único
-                resource_admin_article: Admin. de artículo
-                resource_admin_badge: Admin. de insignias
-                resource_admin_badge_achievement: Admin. de logros de insignias
-                resource_admin_broadcast: Admin. de transmisiones
-                resource_admin_comment: Admin. de comentarios
-                resource_admin_config: Admin. de configuraciones
-                resource_admin_billboard: Admin. de anuncios
-                resource_admin_data_update_script: Admin. de scripts de actualización de datos
-                resource_admin_feedback_message: Admin. de mensajes de retroalimentación
-                resource_admin_html_variant: Admin. de variantes HTML
-                resource_admin_listing_category: Admin. de categorías de listado
-                resource_admin_page: Admin. de páginas
-                resource_admin_tag: Admin. de etiquetas
-                super_admin: Super Admin
-                support_admin: Support Admin
-                suspended: Suspendido
-                tag_moderator: Moderador de etiquetas
-                tech_admin: Admin. técnico
-                trusted: Confiado
-                warned: Advertido
-            tag_mod:
-              subtitle: Etiquetas
-              aria_learn: Obtén más información sobre moderación de etiquetas
-              icon: Mod
-              desc: "Añade una etiqueta que este miembro puede moderar. "
-              remove: "Quitar etiqueta:"
-              notice_html: Actualmente, agregar etiquetas para moderación solo es posible a través de una %{tag_page} específica, proporcionando el ID del usuario (%{user_id}).
-              tag_page: página de etiquetas
+            subtitle: Roles
+            aria_learn: Obtén más información sobre roles
+            icon: Roles
+            desc: "Concede permisos a este miembro asignándole un rol. "
+            empty: Aún no se han asignado roles.
+            button: Asignar rol
+            locked: No puedes quitar este rol.
+            remove: "Quitar rol:"
+            remove_confirm: ¿Estás seguro?
+            remove_confirm_super_admin: Estás quitando el acceso de superadministrador a esta cuenta. Hazlo con cuidado y asegúrate siempre de conservar el acceso a una o más cuentas de superadministrador.
+            name:
+              admin: Admin
+              codeland_admin: Codeland Admin
+              comment_suspended: Comentario suspendido
+              limited: Limitado
+              creator: Creador
+              super_moderator: Super Moderador
+              podcast_admin: Podcast Admin
+              restricted_liquid_tag: Etiqueta de líquido restringida
+              single_resource_admin: Administrador de recurso único
+              resource_admin_article: Admin. de artículo
+              resource_admin_badge: Admin. de insignias
+              resource_admin_badge_achievement: Admin. de logros de insignias
+              resource_admin_broadcast: Admin. de transmisiones
+              resource_admin_comment: Admin. de comentarios
+              resource_admin_config: Admin. de configuraciones
+              resource_admin_billboard: Admin. de anuncios
+              resource_admin_data_update_script: Admin. de scripts de actualización de datos
+              resource_admin_feedback_message: Admin. de mensajes de retroalimentación
+              resource_admin_html_variant: Admin. de variantes HTML
+              resource_admin_listing_category: Admin. de categorías de listado
+              resource_admin_page: Admin. de páginas
+              resource_admin_tag: Admin. de etiquetas
+              super_admin: Super Admin
+              support_admin: Support Admin
+              suspended: Suspendido
+              tag_moderator: Moderador de etiquetas
+              tech_admin: Admin. técnico
+              trusted: Confiado
+              warned: Advertido
+          tag_mod:
+            subtitle: Etiquetas
+            aria_learn: Obtén más información sobre moderación de etiquetas
+            icon: Mod
+            desc: "Añade una etiqueta que este miembro puede moderar. "
+            remove: "Quitar etiqueta:"
+            notice_html: Actualmente, agregar etiquetas para moderación solo es posible a través de una %{tag_page} específica, proporcionando el ID del usuario (%{user_id}).
+            tag_page: página de etiquetas
           priviliged_actions:
             description: Las banderas de usuario afectan las puntuaciones de artículos y comentarios. Cada bandera de usuario válida o abierta reduce aún más la puntuación del artículo y del comentario.
             no_flags: Aún no se han recibido banderas contra este usuario.
@@ -414,16 +414,3 @@ es:
             since_html: Desde la creación de la organización %{time}
             email: Correo electrónico
             github: GitHub
-            twitter: Twitter
-            visit: Visitar organización
-            total_members: "%{count} miembros"
-          delete:
-            heading: Eliminar %{organization}
-            onsubmit: ¿Estás seguro? Esta acción es irreversible.
-            desc2: "Nota: Eliminar la organización, %{organization}, disociará a los miembros y artículos existentes de la organización pero no los eliminará."
-            role_notice: Solo los Super Admins pueden eliminar organizaciones.
-            credits_notice: No puedes eliminar una organización que tiene créditos asociados.
-            submit: Eliminar organización ahora
-          options:
-            delete: Eliminar organización
-            icon: Opciones
