@@ -55,7 +55,7 @@ es:
           aria_label: Descargar datos de miembros
           heading: Descargar datos de miembros
           desc1: Tus datos se descargarán como un archivo de valores separados por comas (.csv).
-          desc2: Los valores listados son Nombre, Nombre de usuario, Dirección de correo electrónico, Estado, Fecha de unión, Última actividad y Organizaciones.
+          desc2: "Los valores listados son Nombre, Nombre de usuario, Dirección de correo electrónico, Estado, Fecha de unión, Última actividad y Organizaciones."
           submit: Descargar
           cancel: Cancelar
           name: Nombre
@@ -156,7 +156,7 @@ es:
           submit: Eliminar ahora
         export:
           heading: Exportar datos de %{user}
-          desc1_html: Elija entre enviar los datos exportados a su correo electrónico de contacto de administrador, %{contact}, o al %{user}'s %{user_email} directamente.
+          desc1_html: Elije entre enviar los datos exportados a su correo electrónico de contacto de administrador, %{contact}, o al %{user}'s %{user_email} directamente.
           desc2: Los datos exportados incluyen las publicaciones y comentarios de un usuario.
           user_email: correo electrónico del usuario
           to_admin: Exportar a administrador
@@ -238,8 +238,7 @@ es:
           note_placeholder: Agregar una nota...
           submit: Enviar
           unknown_user: Usuario desconocido
-          unknown_user_html: |
-            <em>Usuario desconocido</em>
+          unknown_user_html: "<em>Usuario desconocido</em>"
         overview:
           comments: Comentarios
           posts: Publicaciones
@@ -252,7 +251,7 @@ es:
             subtitle: Créditos
             aria_learn: Obtén más información sobre créditos
             icon: Billetera
-            desc: "Otorga/elimina créditos para comprar anuncios clasificados. "
+            desc: "Otorga/elimina créditos para comprar anuncios clasificados."
             button: Ajustar saldo
           orgs:
             subtitle: Organizaciones
@@ -260,7 +259,7 @@ es:
             aria_learn: Obtén más información sobre organizaciones
             aria_revoke: Revocar membresía de %{org} en la organización
             icon: Organizaciones
-            desc: "Agrega a este miembro a organizaciones en tu comunidad. "
+            desc: "Agrega a este miembro a organizaciones en tu comunidad."
             empty: Todavía no forma parte de ninguna organización.
             button: Agregar organización
             type:
@@ -273,7 +272,7 @@ es:
             subtitle: Roles
             aria_learn: Obtén más información sobre roles
             icon: Roles
-            desc: "Concede permisos a este miembro asignándole un rol. "
+            desc: "Concede permisos a este miembro asignándole un rol."
             empty: Aún no se han asignado roles.
             button: Asignar rol
             locked: No puedes quitar este rol.
@@ -314,7 +313,7 @@ es:
             subtitle: Etiquetas
             aria_learn: Obtén más información sobre moderación de etiquetas
             icon: Mod
-            desc: "Añade una etiqueta que este miembro puede moderar. "
+            desc: "Añade una etiqueta que este miembro puede moderar."
             remove: "Quitar etiqueta:"
             notice_html: Actualmente, agregar etiquetas para moderación solo es posible a través de una %{tag_page} específica, proporcionando el ID del usuario (%{user_id}).
             tag_page: página de etiquetas
@@ -414,3 +413,16 @@ es:
             since_html: Desde la creación de la organización %{time}
             email: Correo electrónico
             github: GitHub
+            twitter: Twitter
+            visit: Visitar organización
+            total_members: "%{count} miembros"
+          delete:
+            heading: Eliminar %{organization}
+            onsubmit: ¿Estás seguro? Esta acción es irreversible.
+            desc2: "Nota: Eliminar la organización, %{organization}, disociará a los miembros y artículos existentes de la organización pero no los eliminará."
+            role_notice: Solo los Super Admins pueden eliminar organizaciones.
+            credits_notice: No puedes eliminar una organización que tiene créditos asociados.
+            submit: Eliminar organización ahora
+          options:
+            delete: Eliminar organización
+            icon: Opciones
