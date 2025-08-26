@@ -11,29 +11,29 @@ es:
         sort:
           heading: "Ordenar discusión: "
           title:
-            top: Mejores
-            latest: Más recientes
-            oldest: Más antiguos
+            top: Top
+            latest: Recientes
+            oldest: Antiguos
           desc:
-            top: Los comentarios más votados y relevantes estarán primero
-            latest: Los comentarios más recientes estarán primero
-            oldest: Los comentarios más antiguos estarán primero
+            top: Los comentarios más votados y relevantes aparecerán primero
+            latest: Los comentarios más recientes aparecerán primero
+            oldest: Los comentarios más antiguos aparecerán primero
         sort_button:
           aria_label: Ordenar comentarios
         subtitle:
           top_html: Mejores comentarios %{num}
-          latest_html: Últimos comentarios %{num}
-          oldest_html: Comentarios más antiguos %{num}
+          latest_html: Comentarios recientes %{num}
+          oldest_html: Comentarios antiguos %{num}
         num: "(%{num})"
         subscribe: Suscribirse
       conduct:
         aria_label: Controles de conducta
         code: Código de Conducta
-        report: Informar abuso
+        report: Reportar abuso
       delete:
         heading: ¿Estás seguro de que quieres eliminar este artículo?
         desc:
-          text_html: No puedes deshacer esta acción, ¿quizás solo quieres %{action} en su lugar?
+          text_html: No puedes deshacer esta acción, ¿tal vez solo quieres %{action} en su lugar?
           edit: editar
           unpublish: despublicar
         action:
@@ -42,11 +42,14 @@ es:
           edit: Editar
           unpublish: Despublicar
       jump_to_comments:
-        aria_label: Ir a comentarios
-        label: Ir a comentarios
+        aria_label: Ir a los Comentarios
+        label: Ir a los Comentarios
+      boost:
+        label: Impulsar
+        aria_label: Impulsar
       lock:
         meta:
-          title: Confirmar bloqueo de la discusión
+          title: Confirmar Bloqueo de Discusión
         heading: ¿Estás seguro de que quieres bloquear la discusión en esta publicación?
         desc_html: Los usuarios no podrán agregar nuevos comentarios. Esto <em class="fw-bold">no</em> eliminará los comentarios existentes. Puedes desbloquear la discusión en cualquier momento para permitir que los usuarios dejen comentarios nuevamente.
         cancel: Cancelar
@@ -55,27 +58,27 @@ es:
           placeholder: Más detalles sobre por qué bloqueaste la discusión.
         reason:
           label: Razón para bloquear la discusión (opcional) - esto se mostrará públicamente
-          placeholder: La razón por la cual estás bloqueando esta discusión.
+          placeholder: La razón por la que estás bloqueando esta discusión.
         submit: Bloquear discusión
       preview_discuss_html:
-        zero: ¡Nueva discusión!
-        one: '#discutir <img src="%{image}" />%{count}'
-        other: '#discutir <img src="%{image}" />%{count}'
+        zero: ¡Nueva Discusión!
+        one: '#discuss <img src="%{image}" />%{count}'
+        other: '#discuss <img src="%{image}" />%{count}'
       save:
-        title: "Guardar post %{title} en la lista de lectura"
-        aria_label: "Guardar post %{title} en la lista de lectura"
+        title: "Guardar publicación %{title} en lista de lectura"
+        aria_label: "Guardar publicación %{title} en lista de lectura"
         initial: Guardar
         success: Guardado
       scheduled:
-        subtitle: Publicación programada.
-        text: " Esta URL es pública pero secreta, así que compártela bajo tu propio criterio."
+        subtitle: Publicación Programada.
+        text: " Esta URL es pública pero secreta, así que compártela bajo tu propia discreción."
         edit: Haz clic para editar
       series:
         subtitle: "%{slug} (%{size})"
         size:
-          one: "%{count} Serie de partes"
-          other: "%{count} Serie de partes"
-        published: Publicado el %{date}
+          one: "Serie de %{count} Parte"
+          other: "Serie de %{count} Partes"
+        published: Publicado %{date}
         inbetween:
           num: "..."
           text:
@@ -84,28 +87,28 @@ es:
           title: Ver más
       unlock:
         meta:
-          title: Confirmar desbloqueo de la discusión
+          title: Confirmar Desbloqueo de Discusión
         heading: ¿Estás seguro de que quieres desbloquear la discusión en esta publicación?
         desc: Los usuarios podrán agregar nuevos comentarios. Puedes bloquear la discusión en cualquier momento para evitar que los usuarios dejen comentarios nuevamente.
         cancel: Cancelar
         notes: 'Notas de cuando esta discusión fue bloqueada (solo visible para ti y los administradores):'
-        reason: 'Razón por la cual esta discusión fue bloqueada (visible públicamente):'
+        reason: 'Razón por la que esta discusión fue bloqueada (visible públicamente):'
         submit: Desbloquear discusión
       unpublished:
-        subtitle: Publicación no publicada.
-        text: " Esta URL es pública pero secreta, así que compártela bajo tu propio criterio."
+        subtitle: Publicación No Publicada.
+        text: " Esta URL es pública pero secreta, así que compártela bajo tu propia discreción."
         edit: Haz clic para editar
       co_authors_html: con %{names}
       crossposted:
         text_html: Publicado originalmente en %{url} %{on}
         on_html: el %{date}
-      edited: Actualizado el %{date}
-      edited_html: Actualizado el %{date}
+      edited: Editado el %{date}
+      edited_html: Editado el %{date}
       for_org_html: "%{start} para %{end}%{org}"
-      missing: Artículo ya no disponible
+      missing: Artículo Ya No Disponible
       published_html: Publicado el %{date}
-      scheduled_html: Programado para el %{date}
-      sign_in_for_full_latest_html: Algunas publicaciones recientes solo son visibles para los miembros. <a href="%{link}">Inicia sesión</a> para ver todas las últimas publicaciones.
+      scheduled_html: Programado para %{date}
+      sign_in_for_full_latest_html: Algunas publicaciones recientes solo son visibles para miembros. <a href="%{link}">Inicia sesión</a> para ver todas las últimas.
       read_next: Leer siguiente
       reading_time:
         one: "1 min de lectura"

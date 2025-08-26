@@ -2,7 +2,7 @@
 es:
   views:
     main:
-      aria_home: "%{community} Inicio"
+      aria_home: "Inicio de %{community}"
       header:
         create_account: Crear cuenta
         login: Iniciar sesión
@@ -23,49 +23,51 @@ es:
           aria_label: Iniciar sesión
           text: Iniciar sesión
       nav:
-        admin: Admin
-        dashboard: Tablero
+        admin: Administrador
+        dashboard: Panel
         placeholder: "..."
         list: Lista de lectura
-        moderator_center: Centro de moderación
+        moderator_center: Centro de Moderador
         other: Otro
         settings: Configuración
+        account: Cuenta
       nav_name:
         About: Acerca de
         Code of Conduct: Código de Conducta
         Contact: Contacto
-        FAQ: Preguntas frecuentes
+        FAQ: Preguntas Frecuentes
         Home: Inicio
         Listings: Listados
         Podcasts: Podcasts
         Privacy Policy: Política de Privacidad
         Reading List: Lista de Lectura
         Tags: Etiquetas
-        Terms of use: Términos de uso
+        Terms of use: Términos de Uso
         Videos: Videos
       side:
+        active_discussions: "Discusiones activas"
         listings:
           heading: Listados
-          all: Ver todo
+          all: Ver todos
           new: Crear un Listado
-        trend: guías/recursos populares
+        trend: guías/recursos tendencia
         recent: consultados recientemente
       tags:
-        aria_label: Personalizar la prioridad de las etiquetas
+        aria_label: Personalizar prioridad de etiquetas
         follow: Seguir
         my_tags: Mis Etiquetas
         popular_tags: Etiquetas Populares
       footer:
         built:
-          text_html: Construido en %{forem} — el software %{opensource} que alimenta a %{dev} y otras comunidades inclusivas.
+          text_html: Construido en %{forem} — el software %{opensource} que impulsa %{dev} y otras comunidades inclusivas.
           forem: Forem
-          opensource: de código abierto
+          opensource: código abierto
           dev: DEV
         desc_html: "%{community} — %{desc}"
-        logo: Logotipo de Forem
+        logo: Logo de Forem
         powered:
-          text_html: Hecho con amor y %{rails}. %{community} <span title="copyright">&copy;</span> %{copyright}.
+          text_html: Hecho con amor y %{rails}. %{community} <span title="derechos de autor">&copy;</span> %{copyright}.
           rails: Ruby on Rails
         sidebar_desc_html: "%{community}\n%{desc}"
-      create_post: Crear Post
-      signout: Cerrar sesión
+      create_post: Crear Publicación
+      signout: Cerrar Sesión

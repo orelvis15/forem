@@ -1,33 +1,33 @@
 ---
-en:
+es:
   devise:
     failure:
-      invited: You have a pending invitation, accept it to finish creating your account.
+      invited: Tienes una invitación pendiente, acéptala para terminar de crear tu cuenta.
     invitations:
       edit:
-        header: Set your password
-        submit_button: Let's Get Started
-      invitation_removed: Your invitation was removed.
-      invitation_token_invalid: The invitation token provided is not valid!
+        header: Establece tu contraseña
+        submit_button: Empecemos
+      invitation_removed: Tu invitación fue eliminada.
+      invitation_token_invalid: ¡El token de invitación proporcionado no es válido!
       new:
-        header: Send invitation
-        submit_button: Send an invitation
-      no_invitations_remaining: No invitations remaining
-      send_instructions: An invitation email has been sent to %{email}.
-      updated: Your password was set successfully. You are now signed in.
-      updated_not_active: Your password was set successfully.
+        header: Enviar invitación
+        submit_button: Enviar una invitación
+      no_invitations_remaining: No quedan invitaciones
+      send_instructions: Un correo de invitación ha sido enviado a %{email}.
+      updated: Tu contraseña fue establecida exitosamente. Ahora has iniciado sesión.
+      updated_not_active: Tu contraseña fue establecida exitosamente.
     mailer:
       invitation_instructions:
-        accept_instructions: You can accept the invitation by clicking this link
-        accept: Accept Invitation
-        accept_until: This invitation will expire after %{due_date}.
-        hello: Hello
-        ignore: If you don't want to accept the invitation, please ignore this email. Your account won't be created until you access the link above and set your password.
-        someone_invited_you: You’ve been invited to join the %{community_name} community at %{url}.
-        subject: Invitation instructions
+        accept_instructions: Puedes aceptar la invitación haciendo clic en este enlace
+        accept: Aceptar Invitación
+        accept_until: Esta invitación expirará después del %{due_date}.
+        hello: Hola
+        ignore: Si no quieres aceptar la invitación, por favor ignora este correo. Tu cuenta no será creada hasta que accedas al enlace de arriba y establezcas tu contraseña.
+        someone_invited_you: Has sido invitado a unirte a la comunidad %{community_name} en %{url}.
+        subject: Instrucciones de invitación
   time:
     formats:
       devise:
         mailer:
           invitation_instructions:
-            accept_until_format: "%B %d, %Y %I:%M %p"
+            accept_until_format: "%d de %B, %Y %I:%M %p"

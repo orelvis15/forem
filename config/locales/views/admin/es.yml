@@ -4,98 +4,106 @@ es:
     admin:
       articles:
         flags:
-          score: Puntuación afectada por una bandera en particular
-        privileged_actions:
-          description: Todas las acciones del moderador afectan la puntuación. La puntuación general es una combinación de las acciones del moderador y las reacciones públicas.
+          score: Puntuación afectada por una bandera particular
+        priviliged_actions:
+          description: Todas las acciones de moderador afectan la puntuación. La puntuación general es una combinación de acciones de moderador y reacciones públicas.
           no_flags: El artículo no tiene banderas.
-          no_quality_reactions: El artículo no tiene reacciones de calidad de usuarios de confianza.
-          title: Acciones del moderador
+          no_quality_reactions: El artículo no tiene reacciones de calidad por usuarios confiables.
+          title: Acciones de moderador
+        noindex:
+          reason: "No indexado en motores de búsqueda: "
+          reasons:
+            unpublished: No publicado
+            below_minimum_score: Por debajo de la puntuación mínima de indexación y no destacado
+            below_minimum_date: Publicado antes de la fecha mínima de indexación
+            negative_score: Puntuación negativa
+            unknown: Desconocido
       comments:
         flags:
-          score: Puntuación afectada por una bandera en particular
-        privileged_actions:
-          description: Todas las acciones del moderador afectan la puntuación. La puntuación general es una combinación de las acciones del moderador y las reacciones públicas.
+          score: Puntuación afectada por una bandera particular
+        priviliged_actions:
+          description: Todas las acciones de moderador afectan la puntuación. La puntuación general es una combinación de acciones de moderador y reacciones públicas.
           no_flags: El comentario no tiene banderas.
-          no_quality_reactions: El comentario no tiene reacciones de calidad de usuarios de confianza.
-          title: Acciones del moderador
+          no_quality_reactions: El comentario no tiene reacciones de calidad por usuarios confiables.
+          title: Acciones de moderador
       shared:
         flags:
           actions:
-            mark_as_invalid: Marcar como inválida
-            mark_as_valid: Marcar como válida
+            mark_as_invalid: Marcar como Inválido
+            mark_as_valid: Marcar como Válido
           invalid:
-            title: Bandera marcada como inválida por el administrador
-            value: Inválida
+            title: Bandera marcada como inválida por administrador
+            value: Inválido
           open:
-            title: Bandera abierta
-            value: Abierta
+            title: Bandera Abierta
+            value: Abierto
           unidentified:
-            title: No identificada
-            value: No identificada
+            title: No identificado
+            value: No identificado
           valid:
-            title: Bandera marcada como válida por el administrador
-            value: Válida
+            title: Bandera marcada como válida por administrador
+            value: Válido
       users:
         heading: Miembros
         aria_paginate: Paginar usuarios
         table:
           compact_subtitle: Miembros
-          joined_on: Unido el
+          joined_on: Se unió el
           last_activity: Última actividad
           heading:
             member: Miembro
             status: Estado
-            last_joined: Última actividad y Unido el
+            last_joined: Última actividad y Se unió el
             orgs: Organizaciones
             actions: Acciones
         empty:
           text1: No se encontraron miembros bajo estos filtros.
-          text2: Intenta ampliar o quitar los filtros.
+          text2: Intenta ampliar o eliminar los filtros.
         download:
           aria_label: Descargar datos de miembros
           heading: Descargar datos de miembros
-          desc1: Tus datos se descargarán como un archivo de valores separados por comas (.csv).
-          desc2: "Los valores listados son Nombre, Nombre de usuario, Dirección de correo electrónico, Estado, Fecha de unión, Última actividad y Organizaciones."
+          desc1: Tus datos se descargarán como un archivo de Valores Separados por Comas (.csv).
+          desc2: Los valores listados son Nombre, Nombre de usuario, Dirección de correo, Estado, Fecha de registro, Última actividad y Organizaciones.
           submit: Descargar
           cancel: Cancelar
           name: Nombre
           username: Nombre de usuario
-          email: Dirección de correo electrónico
+          email: Dirección de correo
           status: Estado
-          join: Fecha de unión
+          join: Fecha de registro
           last_activity: Última actividad
           orgs: Organizaciones
         search:
           aria_expand: Expandir búsqueda
-          aria_field: Buscar miembro por nombre, nombre de usuario o correo electrónico
+          aria_field: Buscar miembro por nombre, nombre de usuario o correo
           aria_label: Buscar
-          icon: search
+          icon: buscar
           placeholder: Buscar miembro...
         filters:
           aria_clear: Limpiar todos los filtros
-          aria_label: Filtrar
+          aria_label: Filtro
           aria_remove: "Eliminar filtro: %{value}"
           aria_more_roles: Ver más roles
           heading: Filtros
           applied: Filtros aplicados
-          join: Fecha de unión
-          creation: Creación de la comunidad
+          join: Fecha de registro
+          creation: Creación de comunidad
           today: Hoy
-          clear: Limpiar todo
+          clear: Limpiar todos
           clear_filter:
-            aria_roles: Limpiar filtro de roles de miembros
+            aria_roles: Limpiar filtro de roles de miembro
             aria_status: Limpiar filtro de estados
             aria_orgs: Limpiar filtro de organizaciones
             text: Limpiar filtro
           clear_filters: Limpiar filtros
-          desc: Se mostrarán los miembros que coincidan con alguno de los filtros seleccionados.
+          desc: Se mostrarán los miembros que coincidan con cualquiera de los filtros seleccionados
           summary:
-            roles: Roles de miembros
+            roles: Roles de miembro
             status: Estado
-            join: Fecha de unión
+            join: Fecha de registro
             orgs: Organizaciones
           legend:
-            roles: Roles de miembros
+            roles: Roles de miembro
             status: Estado
             orgs: Organizaciones
           more_roles: Ver más roles
@@ -113,20 +121,20 @@ es:
             select: Seleccionar rol
             note: "Agregar una nota a esta acción:"
             submit: Agregar
-            warning: "Delimitado por comas, todo en minúsculas, no se requiere el símbolo @ al principio de los nombres de usuario. Advertencia: los nombres de usuario distinguen mayúsculas de minúsculas y deben estar en minúsculas. Esta tarea fallará silenciosamente si se proporcionan nombres de usuario incorrectos."
+            warning: "Separado por Comas, Todo en Minúsculas, No Se Requiere Símbolo @ Delante de Los Nombres de Usuario. Advertencia: ¡Los nombres de usuario distinguen entre mayúsculas y minúsculas y deben estar en minúsculas! Esta tarea fallará silenciosamente cuando se proporcionen nombres de usuario incorrectos."
           add_org:
             text: Agregar organización
             heading: Agregar organización
             add: Agregar %{user} a una organización
             edit: Editar el rol de %{user} en una organización
-            id: ID de la organización
+            id: ID de Organización
             role: Rol
-            role_desc_html: Puedes asignar a %{user} como administrador o miembro regular.
-            admin: admin
+            role_desc_html: Puedes asignar a %{user} para ser un Administrador o un miembro regular.
+            admin: administrador
             member: miembro
             submit: Agregar organización
           adjust_credit:
-            text: Ajustar saldo de crédito
+            text: Ajustar saldo de créditos
             heading: Ajustar saldo
             desc_html: "%{user} actualmente tiene %{credits}."
             credits_html: "%{amount} créditos"
@@ -134,59 +142,66 @@ es:
             selector_html: "%{action}%{amount}%{credits}"
             add: Agregar
             unit: créditos
-            aria_credits: Monto de créditos para agregar o quitar
+            aria_credits: Cantidad de créditos para agregar o quitar
             note: "Agregar una nota a esta acción:"
             submit: Ajustar saldo
           bulk_assign_role:
-            text: Asignar rol masivo
-          copy_email: Copiar dirección de correo electrónico
+            text: Asignación Masiva de Rol
+          copy_email: Copiar dirección de correo
         danger:
           desc1: Esta acción es irreversible.
           desc3: Ten cuidado con esta acción.
         banish:
-          heading: Desterrar a %{user}
+          heading: Desterrar %{user}
           desc2_html: Una vez desterrado, eliminaremos todo el contenido creado por %{user} y cambiaremos su nombre de usuario a @spam_###.
-          notice_html: Este no es un usuario nuevo. Solo los Super Administradores o los Administradores de Soporte pueden desterrar a %{user}.
-          submit_html: Desterrar a %{user}
+          notice_html: Este no es un usuario nuevo. Solo Super Administradores o Administradores de Soporte pueden desterrar a %{user}.
+          submit_html: Desterrar %{user}
         delete:
-          heading: Eliminar la cuenta de %{user}
+          heading: Eliminar cuenta de %{user}
           onsubmit: ¿Estás seguro? Esta acción es irreversible.
-          desc2: Una vez eliminada, todos los datos relacionados con %{user} se eliminarán de nuestra base de datos.
-          notice: Solo los Super Administradores pueden eliminar usuarios.
+          desc2: Una vez eliminada, todos los datos relacionados con %{user} serán removidos de nuestra base de datos.
+          notice: Solo Super Administradores pueden eliminar usuarios.
           submit: Eliminar ahora
+        update_email:
+          heading: Actualizar Correo del Usuario
+          desc_html: El correo actual del usuario es %{email}.
+          new_email: Nuevo correo
+          submit: Actualizar correo
+          success: Correo actualizado exitosamente.
+          error: Fallo al actualizar el correo.
         export:
           heading: Exportar datos de %{user}
-          desc1_html: Elije entre enviar los datos exportados a su correo electrónico de contacto de administrador, %{contact}, o al %{user}'s %{user_email} directamente.
-          desc2: Los datos exportados incluyen las publicaciones y comentarios de un usuario.
-          user_email: correo electrónico del usuario
-          to_admin: Exportar a administrador
-          to_user: Exportar a usuario
-          confirm: ¿Estás seguro de que deseas exportar el contenido de este usuario a %{email}?
+          desc1_html: Elige entre enviar los datos exportados a tu correo de contacto de Administrador, %{contact}, o directamente al %{user_email} de %{user}.
+          desc2: Los datos exportados incluyen publicaciones y comentarios del usuario.
+          user_email: correo del usuario
+          to_admin: Exportar al Administrador
+          to_user: Exportar al Usuario
+          confirm: ¿Estás seguro de que quieres exportar el contenido de este usuario a %{email}?
         merge:
           heading: Combinar usuarios
-          onsubmit: ¿Estás seguro? Esto es extremadamente destructivo e irreversible. La fusión eliminará todo el contenido de los otros usuarios y lo combinará con este usuario.
-          desc2_html: Asegúrate de estar actualmente en la página del usuario que deseas <strong>conservar</strong>. Una vez fusionada, la cuenta ingresada a continuación se fusionará y se eliminará.
-          id: ID de usuario
+          onsubmit: ¿Estás seguro? Esto es extremadamente destructivo e irreversible. La combinación eliminará todo el contenido de los otros usuarios y lo combinará con este usuario
+          desc2_html: Asegúrate de estar actualmente en la página del usuario que quieres <strong>mantener</strong>. Una vez combinado, la cuenta ingresada abajo será combinada y eliminada.
+          id: ID de Usuario
           submit: Combinar y eliminar
         social:
           heading: Eliminar cuentas sociales
           desc_html: |
-            <p>A veces, los usuarios encuentran problemas al iniciar sesión cuando...</p>
+            <p>A veces los usuarios encuentran problemas de inicio de sesión cuando...</p>
             <ol>
-              <li>crean una cuenta en %{community} con una cuenta social y,</li>
-              <li>eliminan la cuenta social original y,</li>
-              <li>intentan iniciar sesión nuevamente con la misma cuenta social eliminada.</li>
+              <li>crean una cuenta en %{community} con una cuenta social, y</li>
+              <li>eliminan la cuenta social original, y</li>
+              <li>intentan iniciar sesión nuevamente usando la misma cuenta social eliminada.</li>
             </ol>
-            <p>Si este es el caso, eliminar las cuentas sociales a continuación puede ayudar a restaurar sus cuentas sociales. Para verificar si este es el caso, sigue los pasos 1 y 2 a continuación. Si se verifica, sigue todos los pasos para restaurar sus cuentas sociales.</p>
+            <p>Si este es el caso, eliminar las cuentas sociales abajo puede ayudar a restaurar sus cuentas sociales. Para verificar si este es el caso, sigue los pasos 1 y 2 abajo. Si se verifica, sigue todos los pasos para restaurar sus cuentas sociales.</p>
           howto:
             subtitle: Cómo restaurar una cuenta social
-            first_html: "Verifica la UID de su cuenta social a través de estas herramientas de terceros: %{twitter_uid} y %{github_uid}"
+            first_html: "Verifica el UID de su cuenta social a través de estas herramientas de terceros: %{twitter_uid} y %{github_uid}"
             twitter_uid: UID de Twitter
             github_uid: UID de GitHub
-            second: Verifica si coincide o no con la UID correspondiente a continuación.
+            second: Verifica si coincide o no con el UID correspondiente abajo.
             third: Elimina la cuenta respectiva si no coincide.
-            fourth: Pídele al usuario que vuelva a autorizar su cuenta social a través de %{app}
-          onsubmit: ¿Estás seguro? Esto solo debe hacerse como solución para el o los ejemplos enumerados.
+            fourth: Pide al usuario que reautorice su cuenta social a través de %{app}
+          onsubmit: ¿Estás seguro? Esto solo debe hacerse como solución para el/los ejemplo(s) listado(s).
           uid: "UID:"
           username: "Nombre de usuario:"
           no_data: No hay datos disponibles...
@@ -194,28 +209,33 @@ es:
         unpublish:
           heading: Despublicar todas las publicaciones
           onsubmit: ¿Estás seguro? Todas las publicaciones no estarán disponibles para la comunidad.
-          text1_html: Una vez despublicadas, todas las publicaciones de %{username} se ocultarán y solo estarán accesibles para ellos mismos.
+          text1_html: Una vez despublicadas, todas las publicaciones de %{username} se ocultarán y solo serán accesibles para ellos mismos.
           text2_html: Si %{username} no está suspendido, aún pueden republicar sus publicaciones desde su panel.
           note: "Nota:"
-          note_placeholder: "Texto de la nota"
+          note_placeholder: "Texto de nota"
           submit: Despublicar todas las publicaciones
         emails:
-          empty1: No se encontraron correos electrónicos anteriores para %{user}.
-          empty2: Cualquier correo electrónico enviado a %{email} se encontrará aquí.
-          previous: Correos electrónicos anteriores (%{num})
-          send: Enviar un correo electrónico
+          confirm: Reenviar confirmación
+          empty1: No se encontraron correos previos para %{user}.
+          empty2: Cualquier correo enviado a %{email} se encontrará aquí.
+          previous: Correos previos (%{num})
+          send: Enviar un correo
           to: "Para: %{user} (%{email})"
           subject: Asunto
           subject_placeholder: ¿Qué quieres decir en la línea de asunto?
           body: Cuerpo
           body_placeholder: ¿Qué quieres decir?
-          send_submit: Enviar correo electrónico
+          send_submit: Enviar correo
+          not_confirmed:
+            subtitle: Correo no confirmado
+            desc: "El correo de %{user} aún no ha sido confirmado."
           not_verified:
-            subtitle: Correo electrónico no verificado
-            desc: El correo electrónico de %{user} aún no se ha verificado.
-          verify: Verificar dirección de correo electrónico
+            subtitle: Correo no verificado
+            desc: "El correo de %{user} aún no ha sido verificado."
+          verify: Enviar nuevo correo de verificación
+          manually_verify: Verificar correo manualmente
           verified_html: Última verificación el %{time}
-          reverify: Volver a verificar
+          reverify: Reverificar
         flags:
           empty1: Aún no se han recibido banderas contra %{user}.
           empty2: Cualquier bandera recibida contra %{user} se encontrará aquí.
@@ -224,13 +244,13 @@ es:
             comment: Comentario en "%{title}"
             profile: Perfil del usuario
           origin_html: Marcado por %{user}
-          score: Puntuación de artículo y comentario afectada por una bandera en particular
+          score: Puntuación de artículo y comentario afectada por bandera particular
           total_score: Puntuación de artículo y comentario afectada por banderas de usuario
         notes:
-          empty1: No se encontraron notas anteriores para %{user}.
+          empty1: No se encontraron notas previas para %{user}.
           empty2: Cualquier nota agregada para %{user} se encontrará aquí.
-          previous: Notas anteriores (%{num})
-          note_by: Nota de %{author} el %{time}
+          previous: Notas previas (%{num})
+          note_by: Nota por %{author} el %{time}
           reason_by_html: "%{reason} %{by}"
           by_html: por %{author}
           write: Escribir una nota de usuario
@@ -238,7 +258,8 @@ es:
           note_placeholder: Agregar una nota...
           submit: Enviar
           unknown_user: Usuario desconocido
-          unknown_user_html: "<em>Usuario desconocido</em>"
+          unknown_user_html: |
+            <em>Usuario desconocido</em>
         overview:
           comments: Comentarios
           posts: Publicaciones
@@ -246,106 +267,107 @@ es:
           followers: Seguidores
           following: Siguiendo
           badges: Insignias
-          learn: Obtén más información
+          learn: Aprende más
           credits:
             subtitle: Créditos
-            aria_learn: Obtén más información sobre créditos
-            icon: Billetera
-            desc: "Otorga/elimina créditos para comprar anuncios clasificados."
+            aria_learn: Aprende más sobre créditos
+            icon: Cartera
+            desc: "Otorgar/quitar créditos para comprar listados clasificados. "
             button: Ajustar saldo
           orgs:
             subtitle: Organizaciones
-            aria_edit: Editar membresía de %{org} en la organización
-            aria_learn: Obtén más información sobre organizaciones
-            aria_revoke: Revocar membresía de %{org} en la organización
+            aria_edit: Editar membresía de organización %{org}
+            aria_learn: Aprende más sobre organizaciones
+            aria_revoke: Revocar membresía de organización %{org}
             icon: Organizaciones
-            desc: "Agrega a este miembro a organizaciones en tu comunidad."
-            empty: Todavía no forma parte de ninguna organización.
+            desc: "Agregar este miembro a organizaciones en tu comunidad. "
+            empty: Aún no es parte de ninguna organización.
             button: Agregar organización
             type:
               admin: Administrador
               member: Miembro
               guest: Invitado
-            revoke_confirm: ¿Estás seguro de que deseas eliminar a %{user} de %{org}?
+            revoke_confirm: ¿Estás seguro de que quieres eliminar a %{user} de %{org}?
             submit: Enviar
           roles:
             subtitle: Roles
-            aria_learn: Obtén más información sobre roles
+            aria_learn: Aprende más sobre roles
             icon: Roles
-            desc: "Concede permisos a este miembro asignándole un rol."
+            desc: "Otorgar permisos a este miembro asignando un rol. "
             empty: Aún no se han asignado roles.
             button: Asignar rol
-            locked: No puedes quitar este rol.
-            remove: "Quitar rol:"
+            locked: No puedes eliminar este rol.
+            remove: "Eliminar rol:"
             remove_confirm: ¿Estás seguro?
-            remove_confirm_super_admin: Estás quitando el acceso de superadministrador a esta cuenta. Hazlo con cuidado y asegúrate siempre de conservar el acceso a una o más cuentas de superadministrador.
+            remove_confirm_super_admin: Estás eliminando acceso de super administrador de esta cuenta. Hazlo cuidadosamente y siempre asegúrate de mantener acceso a una o más cuentas de super administrador
             name:
-              admin: Admin
-              codeland_admin: Codeland Admin
-              comment_suspended: Comentario suspendido
+              admin: Administrador
+              codeland_admin: Administrador de Codeland
+              comment_suspended: Comentarios Suspendidos
               limited: Limitado
               creator: Creador
               super_moderator: Super Moderador
-              podcast_admin: Podcast Admin
-              restricted_liquid_tag: Etiqueta de líquido restringida
-              single_resource_admin: Administrador de recurso único
-              resource_admin_article: Admin. de artículo
-              resource_admin_badge: Admin. de insignias
-              resource_admin_badge_achievement: Admin. de logros de insignias
-              resource_admin_broadcast: Admin. de transmisiones
-              resource_admin_comment: Admin. de comentarios
-              resource_admin_config: Admin. de configuraciones
-              resource_admin_billboard: Admin. de anuncios
-              resource_admin_data_update_script: Admin. de scripts de actualización de datos
-              resource_admin_feedback_message: Admin. de mensajes de retroalimentación
-              resource_admin_html_variant: Admin. de variantes HTML
-              resource_admin_listing_category: Admin. de categorías de listado
-              resource_admin_page: Admin. de páginas
-              resource_admin_tag: Admin. de etiquetas
-              super_admin: Super Admin
-              support_admin: Support Admin
+              podcast_admin: Administrador de Podcast
+              restricted_liquid_tag: Etiqueta Líquida Restringida
+              single_resource_admin: Administrador de Recurso Individual
+              resource_admin_article: Administrador de Artículos
+              resource_admin_badge: Administrador de Insignias
+              resource_admin_badge_achievement: Administrador de Logros de Insignias
+              resource_admin_broadcast: Administrador de Transmisión
+              resource_admin_comment: Administrador de Comentarios
+              resource_admin_config: Administrador de Configuración
+              resource_admin_billboard: Administrador de Cartelera
+              resource_admin_data_update_script: Administrador de Script de Actualización de Datos
+              resource_admin_feedback_message: Administrador de Mensaje de Retroalimentación
+              resource_admin_html_variant: Administrador de Variante HTML
+              resource_admin_listing_category: Administrador de Categoría de Listado
+              resource_admin_page: Administrador de Página
+              resource_admin_tag: Administrador de Etiquetas
+              super_admin: Super Administrador
+              support_admin: Administrador de Soporte
               suspended: Suspendido
-              tag_moderator: Moderador de etiquetas
-              tech_admin: Admin. técnico
-              trusted: Confiado
+              tag_moderator: Moderador de Etiquetas
+              tech_admin: Administrador Técnico
+              trusted: Confiable
               warned: Advertido
           tag_mod:
             subtitle: Etiquetas
-            aria_learn: Obtén más información sobre moderación de etiquetas
+            aria_learn: Aprende más sobre moderación de etiquetas
             icon: Mod
-            desc: "Añade una etiqueta que este miembro puede moderar."
-            remove: "Quitar etiqueta:"
-            notice_html: Actualmente, agregar etiquetas para moderación solo es posible a través de una %{tag_page} específica, proporcionando el ID del usuario (%{user_id}).
-            tag_page: página de etiquetas
-          priviliged_actions:
-            description: Las banderas de usuario afectan las puntuaciones de artículos y comentarios. Cada bandera de usuario válida o abierta reduce aún más la puntuación del artículo y del comentario.
-            no_flags: Aún no se han recibido banderas contra este usuario.
-            title: Banderas recibidas
-          profile:
-            locked:
-              icon: Acceso bloqueado
-              text: Este usuario tiene acceso bloqueado.
-              unlock: Desbloquear acceso
-            id: ID %{userid}
-            since_html: Miembro desde %{time}
-            not_member: El usuario aún no ha aceptado su invitación.
-            email: Correo electrónico
-            github: GitHub
-            twitter: Twitter
-            visit: Visitar perfil
-            options:
-              icon: Opciones
-              export: Exportar datos
-              merge: Combinar usuarios
-              unpublish: Despublicar todas las publicaciones
-              remove_social: Eliminar cuentas sociales
-              banish: Desterrar usuario
-              delete: Eliminar usuario
+            desc: "Agregar una etiqueta que este miembro puede moderar. "
+            remove: "Eliminar etiqueta:"
+            notice_html: Agregar etiquetas para moderación también es posible a través de una %{tag_page} particular, proporcionando el nombre de usuario (%{username}).
+            tag_page: página de etiqueta
+        priviliged_actions:
+          description: Las banderas de usuario afectan las puntuaciones de artículos y comentarios. Cada bandera de usuario válida o abierta reduce aún más la puntuación del artículo y comentario.
+          no_flags: Aún no se han recibido banderas contra este usuario.
+          title: Banderas recibidas
+        profile:
+          locked:
+            icon: Acceso bloqueado
+            text: Este usuario ha bloqueado el acceso.
+            unlock: Desbloquear acceso
+          id: ID %{userid}
+          since_html: Miembro desde %{time}
+          not_member: El usuario aún no ha aceptado su invitación.
+          email: Correo
+          github: GitHub
+          twitter: Twitter
+          visit: Visitar perfil
+          options:
+            icon: Opciones
+            update_email: Actualizar Correo del Usuario
+            export: Exportar datos
+            merge: Combinar usuarios
+            unpublish: Despublicar todas las publicaciones
+            remove_social: Eliminar cuentas sociales
+            banish: Desterrar usuario
+            delete: Eliminar usuario
         reports:
-          subtitle: Informes presentados por %{user} (%{num})
+          subtitle: Reportes enviados por %{user} (%{num})
           for_html: Para %{url}
-          empty1: Aún no se ha informado ningún comentario o publicación.
-          empty2: Cualquier comentario o publicación informado por %{user} se encontrará aquí.
+          empty1: Aún no se ha reportado ningún comentario o publicación.
+          empty2: Cualquier comentario o publicación reportada por %{user} se encontrará aquí.
           category:
             rude or vulgar: Grosero o vulgar
             harrassment: Acoso
@@ -355,7 +377,25 @@ es:
           status:
             Open: Abierto
             Resolved: Resuelto
-            Invalid: No válido
+            Invalid: Inválido
+        reputation:
+          change: Cambiar modificador de reputación
+          change_note: Razón del cambio
+          desc_html: Esto cambia los puntos otorgados a las reacciones dadas por el usuario, aumentando o disminuyendo su impacto en la puntuación de artículos y comentarios. El modificador de reputación actual del usuario es <strong>%{reputation_modifier}</strong>.
+          heading: Cambiar modificador de reputación
+          reputation_modifier: Nuevo modificador de reputación
+          submit: Cambiar modificador de reputación
+          success: Modificador de reputación del usuario cambiado exitosamente a %{reputation_modifier}.
+          error: Fallo al cambiar el modificador de reputación del usuario (selecciona entre 0 y 5)
+        max_score:
+          change: Cambiar puntuación máxima
+          change_note: Razón del cambio
+          desc_html: Esto cambia la puntuación máxima que un usuario puede lograr. 0 significa ilimitado. La puntuación máxima actual del usuario es <strong>%{max_score}</strong>.
+          heading: Cambiar puntuación máxima
+          max_score: Nueva puntuación máxima
+          submit: Cambiar puntuación máxima
+          success: Puntuación máxima del usuario cambiada exitosamente a %{max_score}.
+          error: Fallo al cambiar la puntuación máxima del usuario (selecciona entre 0 y 100)
         unpublish_logs:
           subtitle_html: Despublicado por %{user} el %{time}
           posts: "Publicaciones:"
@@ -363,66 +403,72 @@ es:
           republished: (fue republicado)
           comments: "Comentarios:"
           commentable: comentable
-          created: "Creado en: %{time}"
+          created: "Creado el: %{time}"
         tabs:
-          overview: Resumen
+          overview: Vista general
           notes: Notas
-          emails: Correos electrónicos
-          reports: Informes
+          emails: Correos
+          reports: Reportes
           flags: Banderas
-          unpublish_logs: Historial de despublicación
+          articles: Artículos
+          comments: Comentarios
+          unpublish_logs: Historial de Despublicar Todo
         status_title: Estado actual
         status_reader: "Estado actual:"
         more_orgs:
           one: + %{count}
           other: + %{count}
         roles:
-          Admin: Admin
-          Tech Admin: Tech Admin
-          Super Admin: Super Admin
-          Resource Admin: Resource Admin
-          "Resource Admin: Article": "Resource Admin: Article"
-          "Resource Admin: Badge": "Resource Admin: Badge"
-          "Resource Admin: BadgeAchievement": "Resource Admin: BadgeAchievement"
-          "Resource Admin: Broadcast": "Resource Admin: Broadcast"
-          "Resource Admin: Comment": "Resource Admin: Comment"
-          "Resource Admin: Config": "Resource Admin: Config"
-          "Resource Admin: Billboard": "Resource Admin: Billboard"
-          "Resource Admin: DataUpdateScript": "Resource Admin: DataUpdateScript"
-          "Resource Admin: FeedbackMessage": "Resource Admin: FeedbackMessage"
-          "Resource Admin: HtmlVariant": "Resource Admin: HtmlVariant"
-          "Resource Admin: ListingCategory": "Resource Admin: ListingCategory"
-          "Resource Admin: Page": "Resource Admin: Page"
-          "Resource Admin: Tag": "Resource Admin: Tag"
-          Super Moderator: Super Moderator
+          Admin: Administrador
+          Tech Admin: Administrador Técnico
+          Super Admin: Super Administrador
+          Resource Admin: Administrador de Recursos
+          "Resource Admin: Article": "Administrador de Recursos: Artículo"
+          "Resource Admin: Badge": "Administrador de Recursos: Insignia"
+          "Resource Admin: BadgeAchievement": "Administrador de Recursos: LogroDeInsignia"
+          "Resource Admin: Broadcast": "Administrador de Recursos: Transmisión"
+          "Resource Admin: Comment": "Administrador de Recursos: Comentario"
+          "Resource Admin: Config": "Administrador de Recursos: Configuración"
+          "Resource Admin: Billboard": "Administrador de Recursos: Cartelera"
+          "Resource Admin: DataUpdateScript": "Administrador de Recursos: ScriptDeActualizaciónDeDatos"
+          "Resource Admin: FeedbackMessage": "Administrador de Recursos: MensajeDeRetroalimentación"
+          "Resource Admin: HtmlVariant": "Administrador de Recursos: VarianteHtml"
+          "Resource Admin: ListingCategory": "Administrador de Recursos: CategoríaDeListado"
+          "Resource Admin: Page": "Administrador de Recursos: Página"
+          "Resource Admin: Tag": "Administrador de Recursos: Etiqueta"
+          Super Moderator: Super Moderador
         statuses:
           Warned: Advertido
-          Comment Suspended: Comentario suspendido
+          Comment Suspended: Comentarios Suspendidos
           Limited: Limitado
           Suspended: Suspendido
-          Good Standing: Buen estado
+          Spam: Spam
+          Good Standing: Buen Estado
           Good standing: Buen estado
-          Trusted: Confiado
+          Trusted: Confiable
+          Base Subscriber: Suscriptor Base
+        max_score_title: Puntuación máxima
+        max_score_reader: "Puntuación máxima:"
         identities:
           facebook: Facebook
           github: GitHub
           twitter: Twitter
-        organizations:
-          profile:
-            id: ID %{organizationid}
-            since_html: Desde la creación de la organización %{time}
-            email: Correo electrónico
-            github: GitHub
-            twitter: Twitter
-            visit: Visitar organización
-            total_members: "%{count} miembros"
-          delete:
-            heading: Eliminar %{organization}
-            onsubmit: ¿Estás seguro? Esta acción es irreversible.
-            desc2: "Nota: Eliminar la organización, %{organization}, disociará a los miembros y artículos existentes de la organización pero no los eliminará."
-            role_notice: Solo los Super Admins pueden eliminar organizaciones.
-            credits_notice: No puedes eliminar una organización que tiene créditos asociados.
-            submit: Eliminar organización ahora
-          options:
-            delete: Eliminar organización
-            icon: Opciones
+      organizations:
+        profile:
+          id: ID %{organizationid}
+          since_html: Organización desde %{time}
+          email: Correo
+          github: GitHub
+          twitter: Twitter
+          visit: Visitar organización
+          total_members: "%{count} miembros"
+        delete:
+          heading: Eliminar %{organization}
+          onsubmit: ¿Estás seguro? Esta acción es irreversible.
+          desc2: "Nota: Eliminar la organización, %{organization}, desasociará a los miembros y artículos existentes de la organización pero no los eliminará."
+          role_notice: Solo Super Administradores pueden eliminar organizaciones.
+          credits_notice: No puedes eliminar una organización que tiene créditos asociados.
+          submit: Eliminar organización ahora
+        options:
+          delete: Eliminar organización
+          icon: Opciones

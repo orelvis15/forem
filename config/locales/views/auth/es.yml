@@ -2,14 +2,14 @@
 es:
   views:
     auth:
-      background: fondo de Forem
+      background: fondo de forem
       create:
         aria_label: Crear nueva cuenta
         text: Crear cuenta
       creator:
         text1: ¡Comencemos tu viaje en Forem!
         text2: Crea tu cuenta de administrador primero.
-        text3: Luego te guiaremos en la configuración de tu Forem.
+        text3: Luego te guiaremos a través de la configuración de tu Forem.
         hint:
           aria_label: Editar nombre de usuario
           icon: Editar nombre de usuario
@@ -20,21 +20,21 @@ es:
       login:
         aria_label: Iniciar sesión
         text: Iniciar sesión
-        forgot: ¿Olvidaste la contraseña?
+        forgot: ¿Olvidaste tu contraseña?
       provider:
         text: "%{action} con %{provider}"
         login: Continuar
         signup: Registrarse
         email:
-          icon: correo electrónico
-          text: Registrarse con correo electrónico
+          icon: correo
+          text: Registrarse con Correo
       register:
         errors:
-          one: Ups, encontramos %{count} problema
-          other: Ups, encontramos %{count} problemas
+          one: Vaya, encontramos %{count} problema
+          other: Vaya, encontramos %{count} problemas
         allow:
-          one_html: Registro restringido a correos electrónicos de <strong>@%{domain}</strong>.
-          list: Registro restringido a los siguientes correos electrónicos
+          one_html: Registro restringido a correos de <strong>@%{domain}</strong>.
+          list: Registro restringido a los siguientes correos
         create: Crea tu cuenta
         field:
           name:
@@ -45,9 +45,9 @@ es:
             desc: Un nombre de usuario solo puede contener letras, números y guiones bajos. La longitud máxima del nombre de usuario puede ser de 30 caracteres.
             label: Nombre de usuario
           email:
-            aria_label: Correo electrónico
-            label: Correo electrónico
-            placeholder: john@example.com
+            aria_label: Correo
+            label: Correo
+            placeholder: juan@ejemplo.com
           password:
             aria_label: Contraseña
             desc: Mínimo 8 caracteres
@@ -56,12 +56,12 @@ es:
             hide: Ocultar contraseña
             show: Mostrar contraseña
           confirm:
-            aria_label: Confirmación de contraseña
-            label: Confirmación de contraseña
-          required: "* - obligatorio"
+            aria_label: Confirmación de Contraseña
+            label: Confirmación de Contraseña
+          required: "* - requerido"
         secret:
-          label: Nuevo secreto de Forem
-          placeholder: Según lo proporcionado por tu host de Forem
+          label: Nuevo Secreto de Forem
+          placeholder: Como fue proporcionado por tu host de Forem
           hide: Ocultar nuevo secreto de Forem
           show: Mostrar nuevo secreto de Forem
         submit: Registrarse
@@ -69,12 +69,12 @@ es:
         meta:
           title: Comencemos con Forem
         heading: Comencemos tu viaje en Forem
-        step_1: Crea una cuenta. Será la primera cuenta de superadministrador.
-        step_2_html: Una vez que te registres a continuación, puedes configurar tu comunidad en %{path}.
+        step_1: Crea una cuenta. Será la primera cuenta de super administrador.
+        step_2_html: Una vez que te registres abajo, puedes configurar tu comunidad en %{path}.
         step_3: Hay mucho que puedes hacer como administrador, pero hay una curva de aprendizaje.
-        step_4: ¡Comunícate con el equipo de Forem si no estás seguro de algo!
-        step_5: "Para Empoderar a la Comunidad 🌱"
-      tagline: Somos un lugar donde los codificadores comparten, se mantienen actualizados y hacen crecer sus carreras.
+        step_4: ¡Por favor contacta al equipo de Forem si no estás seguro de algo!
+        step_5: "Para Empoderar la Comunidad 🌱"
+      tagline: Somos un lugar donde los programadores comparten, se mantienen actualizados y hacen crecer sus carreras.
       title:
         text_html: "%{name} es una comunidad de %{maybe_size}increíbles %{label}"
         size: "%{num} "

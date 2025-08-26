@@ -3,15 +3,18 @@ es:
   views:
     stories:
       meta:
-        description_tagged: Contenido de %{tag} en %{name}
+        description_tagged: "Contenido de %{tag} en %{name}"
         page: " Página %{page}"
-        rss: Feed RSS de %{name}
+        rss: "Feed RSS de %{name}"
+      status_placeholder: "¿Qué tienes en mente?"
+      submit: "Publicar"
+      status_hint_html: "<strong>Publicaciones Rápidas (beta)</strong> aparecen en el feed pero no en notificaciones o tu perfil — <a href='/new'>Abrir Editor Completo</a>"
       heading: Publicaciones
-      discuss: "#discutir"
+      discuss: "#discusión"
       follow: Seguir
       menu:
-        aria_left: botón de navegación izquierdo
-        aria_right: botón de navegación derecho
+        aria_left: botón-nav-izquierdo
+        aria_right: botón-nav-derecho
       sort:
         aria_label: Ver publicaciones por
         aria_tagged: Ver publicaciones etiquetadas por
@@ -20,6 +23,6 @@ es:
         month: Mes
         year: Año
         infinity: Infinito
-        latest: Último
-        signin_html: "👋 <a href=\"%{path}\">Inicia sesión</a> para poder ordenar las publicaciones por <strong>relevancia</strong>, <strong>últimas</strong> o <strong>mejores</strong>."
-        top: Mejores
+        latest: Recientes
+        signin_html: "👋 <a href=\"%{path}\">Inicia sesión</a> para poder ordenar publicaciones por <strong>relevante</strong>, <strong>recientes</strong>, o <strong>top</strong>."
+        top: Top
