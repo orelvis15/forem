@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # [@forem/delightful] - all routes are nested under this optional scope to
   # begin supporting i18n.
-  scope "(:locale)", locale: /en|fr|es/, defaults: { locale: nil } do
+  scope "(:locale)", locale: /en|fr|es/, defaults: { locale: 'es' } do
     get "/locale/:locale", to: "stories#index"
 
     draw :admin

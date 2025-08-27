@@ -297,7 +297,7 @@ class ApplicationController < ActionController::Base
     I18n.locale = if %w[en fr es].include?(params[:locale])
                     params[:locale]
                   else
-                    Settings::UserExperience.default_locale
+                    'es' # Forzar español explícitamente
                   end
   end
 
@@ -462,5 +462,9 @@ class ApplicationController < ActionController::Base
   def clear_request_store
     # Clear RequestStore in development/test to avoid lingering. Not important in prod. 
     RequestStore.clear! unless Rails.env.production?
+  end
+
+  def default_url_options(options={})
+    { locale: I18n.locale }
   end
 end
