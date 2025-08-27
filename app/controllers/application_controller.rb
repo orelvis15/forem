@@ -295,10 +295,10 @@ class ApplicationController < ActionController::Base
 
   def determine_locale
     I18n.locale = if %w[en fr es].include?(params[:locale])
-                    params[:locale]
-                  else
-                    'es' # Forzar español explícitamente
-                  end
+                  params[:locale]
+                else
+                  Settings::UserExperience.default_locale
+                end
   end
 
   def set_devise_rememberable_options
@@ -465,6 +465,10 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options={})
-    { locale: I18n.locale }
+    if I18n.locale.to_s == 'es' # tu locale por defecto
+      options
+    else
+      { locale: I18n.locale }.merge(options)
+    end
   end
 end

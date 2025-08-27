@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # [@forem/delightful] - all routes are nested under this optional scope to
   # begin supporting i18n.
-  scope "(:locale)", locale: /en|fr|es/, defaults: { locale: 'es' } do
+  scope "(/locale/:locale)", defaults: { locale: nil } do
     get "/locale/:locale", to: "stories#index"
 
     draw :admin
@@ -325,9 +325,6 @@ Rails.application.routes.draw do
 
     post "/fallback_activity_recorder", to: "ga_events#create"
 
-    get "/new", to: "articles#new"
-    get "/new/:template", to: "articles#new"
-
     get "/page/:slug", to: "pages#show"
 
     scope "p" do
@@ -381,6 +378,9 @@ Rails.application.routes.draw do
     # open search
     get "/open-search", to: "open_search#show",
                         constraints: { format: /xml/ }
+
+    get "/new", to: "articles#new"
+    get "/new/:template", to: "articles#new"
 
     get "/pod", to: "podcast_episodes#index"
     get "/podcasts", to: redirect("pod")
