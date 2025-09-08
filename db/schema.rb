@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
+ActiveRecord::Schema[7.0].define(version: 2025_09_04_154635) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "ltree"
@@ -252,6 +252,15 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
     t.string "username"
     t.index ["banished_by_id"], name: "index_banished_users_on_banished_by_id"
     t.index ["username"], name: "index_banished_users_on_username", unique: true
+  end
+
+  create_table "billboard_placement_area_configs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "placement_area", null: false
+    t.integer "signed_in_rate", default: 100, null: false
+    t.integer "signed_out_rate", default: 100, null: false
+    t.datetime "updated_at", null: false
+    t.index ["placement_area"], name: "index_billboard_placement_area_configs_on_placement_area", unique: true
   end
 
   create_table "blazer_audits", force: :cascade do |t|
@@ -520,6 +529,9 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
     t.integer "display_to", default: 0, null: false
     t.integer "exclude_article_ids", default: [], array: true
     t.string "exclude_role_names", default: [], array: true
+    t.boolean "exclude_survey_completions", default: false, null: false
+    t.integer "exclude_survey_ids", default: [], null: false, array: true
+    t.datetime "expires_at"
     t.integer "impressions_count", default: 0
     t.integer "include_subforem_ids", default: [], array: true
     t.string "name"
@@ -544,6 +556,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
     t.index ["cached_tag_list"], name: "index_display_ads_on_cached_tag_list", opclass: :gin_trgm_ops, using: :gin
     t.index ["exclude_article_ids"], name: "index_display_ads_on_exclude_article_ids", using: :gin
     t.index ["exclude_role_names"], name: "index_display_ads_on_exclude_role_names", using: :gin
+    t.index ["exclude_survey_completions"], name: "idx_display_ads_survey_completions"
+    t.index ["exclude_survey_ids"], name: "idx_display_ads_survey_ids", using: :gin
     t.index ["include_subforem_ids"], name: "index_display_ads_on_include_subforem_ids", using: :gin
     t.index ["page_id"], name: "index_display_ads_on_page_id"
     t.index ["placement_area"], name: "index_display_ads_on_placement_area"
@@ -1036,19 +1050,23 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
   create_table "poll_skips", force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
     t.bigint "poll_id"
+    t.integer "session_start", default: 0, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "user_id"
     t.index ["poll_id", "user_id"], name: "index_poll_skips_on_poll_and_user", unique: true
+    t.index ["user_id", "poll_id", "session_start"], name: "index_poll_skips_on_user_poll_session"
   end
 
   create_table "poll_text_responses", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "poll_id", null: false
+    t.integer "session_start", default: 0, null: false
     t.text "text_content"
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.index ["poll_id", "user_id"], name: "index_poll_text_responses_on_poll_id_and_user_id", unique: true
+    t.index ["poll_id", "user_id", "session_start"], name: "index_poll_text_responses_on_poll_user_session_unique", unique: true
     t.index ["poll_id"], name: "index_poll_text_responses_on_poll_id"
+    t.index ["user_id", "poll_id", "session_start"], name: "index_poll_text_responses_on_user_poll_session"
     t.index ["user_id"], name: "index_poll_text_responses_on_user_id"
   end
 
@@ -1056,9 +1074,13 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
     t.datetime "created_at", precision: nil, null: false
     t.bigint "poll_id", null: false
     t.bigint "poll_option_id", null: false
+    t.integer "session_start", default: 0, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.bigint "user_id", null: false
-    t.index ["poll_option_id", "user_id"], name: "index_poll_votes_on_poll_option_and_user", unique: true
+    t.index ["poll_id", "user_id"], name: "index_poll_votes_on_poll_user_regular", where: "(session_start = 0)"
+    t.index ["poll_option_id", "user_id", "session_start"], name: "index_poll_votes_on_poll_option_user_session_unique", unique: true
+    t.index ["poll_option_id", "user_id"], name: "index_poll_votes_on_poll_option_user_regular", where: "(session_start = 0)"
+    t.index ["user_id", "poll_id", "session_start"], name: "index_poll_votes_on_user_id_and_poll_id_and_session_start"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -1284,8 +1306,22 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
     t.index ["score"], name: "index_subforems_on_score"
   end
 
+  create_table "survey_completions", force: :cascade do |t|
+    t.datetime "completed_at", null: false
+    t.datetime "created_at", null: false
+    t.bigint "survey_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["survey_id"], name: "idx_survey_completions_survey"
+    t.index ["survey_id"], name: "index_survey_completions_on_survey_id"
+    t.index ["user_id", "survey_id"], name: "idx_survey_completions_user_survey", unique: true
+    t.index ["user_id"], name: "idx_survey_completions_user"
+    t.index ["user_id"], name: "index_survey_completions_on_user_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.boolean "active", default: true
+    t.boolean "allow_resubmission", default: false, null: false
     t.datetime "created_at", null: false
     t.boolean "display_title", default: true
     t.string "title", null: false
@@ -1721,6 +1757,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_08_21_230020) do
   add_foreign_key "response_templates", "users"
   add_foreign_key "segmented_users", "audience_segments"
   add_foreign_key "segmented_users", "users"
+  add_foreign_key "survey_completions", "surveys"
+  add_foreign_key "survey_completions", "users"
   add_foreign_key "tag_adjustments", "articles", on_delete: :cascade
   add_foreign_key "tag_adjustments", "tags", on_delete: :cascade
   add_foreign_key "tag_adjustments", "users", on_delete: :cascade

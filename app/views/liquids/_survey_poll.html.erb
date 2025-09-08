@@ -13,14 +13,15 @@
     <div class="survey-text-input-container">
       <textarea 
         id="survey-text-input-<%= poll.id %>"
+        name="survey-text-input"
         class="survey-text-input"
-        placeholder="Enter your response here..."
+        placeholder="<%= t("views.survey.enter_response") %>"
         maxlength="1000"
         rows="4"
         style="width: 100%; padding: 12px; border: 1px solid var(--form-border); border-radius: var(--radius-md); resize: vertical;"
       ></textarea>
       <div class="survey-text-input-feedback" style="display: none; margin-top: 10px; padding: 10px; background-color: var(--cta-branded-bg); border-left: 4px solid var(--cta-branded-border); color: var(--cta-branded-color); border-radius: var(--radius-sm);">
-        ✓ Thank you for your response.
+        ✓ <%= t("views.survey.thank_you_response") %>
       </div>
     </div>
   <% else %>
@@ -47,7 +48,7 @@
       <ul class="survey-poll-answers">
         <% options.each do |option| %>
           <li class="survey-poll-option" id="survey_poll_option_list_item_<%= option.id %>" data-option-id="<%= option.id %>">
-            <input type="radio" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>" data-option-id="<%= option.id %>">
+            <input type="radio" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>">
             <label for="survey_poll_option_<%= option.id %>" class="option-text">
               <span class="scale-value">
                 <%= option.markdown %>
@@ -65,9 +66,9 @@
         <% options.each do |option| %>
           <li class="survey-poll-option" id="survey_poll_option_list_item_<%= option.id %>" data-option-id="<%= option.id %>">
             <% if poll.single_choice? %>
-              <input type="radio" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>" data-option-id="<%= option.id %>">
+              <input type="radio" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>">
             <% elsif poll.multiple_choice? %>
-              <input type="checkbox" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>" data-option-id="<%= option.id %>">
+              <input type="checkbox" id="survey_poll_option_<%= option.id %>" name="survey_poll_<%= poll.id %>" value="<%= option.id %>">
             <% end %>
             
             <label for="survey_poll_option_<%= option.id %>" class="option-text">
@@ -83,10 +84,10 @@
   <% end %>
   
   <div class="survey-poll-feedback" style="display: none;">
-    ✓ Thank you for your response.
+    ✓ <%= t("views.survey.thank_you_response") %>
   </div>
 
   <div class="survey-poll-final-vote-feedback" style="display: none;">
-    ✓ Thank you for completing the survey!
+    ✓ <%= t("views.survey.thank_you_completing") %>
   </div>
 </div>

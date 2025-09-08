@@ -169,6 +169,42 @@ RSpec.describe Billboard do
       billboard.audience_segment_type = "manual"
       expect(billboard).not_to be_valid
     end
+
+    describe "expiration validation" do
+      it "allows setting approved to true when expires_at is nil" do
+        billboard.expires_at = nil
+        billboard.approved = true
+        expect(billboard).to be_valid
+      end
+
+      it "allows setting approved to true when expires_at is in the future" do
+        billboard.expires_at = 1.day.from_now
+        billboard.approved = true
+        expect(billboard).to be_valid
+      end
+
+      it "prevents setting approved to true when expires_at is in the past" do
+        billboard.expires_at = 1.day.ago
+        billboard.approved = true
+        expect(billboard).not_to be_valid
+        expect(billboard.errors[:approved]).to include("cannot be set to true if billboard has expired")
+      end
+
+      it "allows setting approved to false when expires_at is in the past" do
+        billboard.expires_at = 1.day.ago
+        billboard.approved = false
+        expect(billboard).to be_valid
+      end
+
+      it "prevents setting approved to true when expires_at is in the past" do
+        billboard.expires_at = 1.day.ago
+        billboard.approved = false # First set to false to pass validation
+        billboard.save!
+        billboard.approved = true # Now try to set to true
+        expect(billboard).not_to be_valid
+        expect(billboard.errors[:approved]).to include("cannot be set to true if billboard has expired")
+      end
+    end
   end
 
   context "when range env var is set" do
@@ -834,6 +870,86 @@ RSpec.describe Billboard do
       )
     end
 
+    context "when delivery rate configuration is set" do
+      let!(:config) do
+        BillboardPlacementAreaConfig.create!(placement_area: "digest_second", signed_in_rate: 0, signed_out_rate: 50)
+      end
+
+      it "returns nil when delivery rate is 0%" do
+        result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: true,
+          user_tags: nil,
+          user_id: nil,
+        )
+
+        expect(result).to be_nil
+      end
+
+      it "returns nil when delivery rate is 0% for signed out users" do
+        config.update!(signed_out_rate: 0)
+
+        result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: false,
+          user_tags: nil,
+          user_id: nil,
+        )
+
+        expect(result).to be_nil
+      end
+
+      it "returns a billboard when delivery rate is 100%" do
+        config.update!(signed_in_rate: 100, signed_out_rate: 100)
+
+        result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: true,
+          user_tags: nil,
+          user_id: nil,
+        )
+
+        expect(result).to be_present
+        expect([paired_bb, other_bb]).to include(result)
+      end
+
+      it "respects different rates for signed in vs signed out users" do
+        config.update!(signed_in_rate: 100, signed_out_rate: 0)
+
+        # Signed in user should get a billboard
+        signed_in_result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: true,
+          user_tags: nil,
+          user_id: nil,
+        )
+        expect(signed_in_result).to be_present
+
+        # Signed out user should get nil
+        signed_out_result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: false,
+          user_tags: nil,
+          user_id: nil,
+        )
+        expect(signed_out_result).to be_nil
+      end
+
+      it "uses default 100% rate when no config exists for placement area" do
+        config.destroy!
+
+        result = described_class.for_display(
+          area: "digest_second",
+          user_signed_in: true,
+          user_tags: nil,
+          user_id: nil,
+        )
+
+        expect(result).to be_present
+        expect([paired_bb, other_bb]).to include(result)
+      end
+    end
+
     context "when prefer_paired_with_billboard_id is provided" do
       xit "returns the billboard matching that ID" do
         result = described_class.for_display(
@@ -861,6 +977,51 @@ RSpec.describe Billboard do
 
         # since only paired_bb and other_bb exist for this area, it must return one of them
         expect([paired_bb, other_bb]).to include(result)
+      end
+    end
+  end
+
+  describe "#check_and_handle_expiration" do
+    let(:billboard) { create(:billboard, approved: true, published: true) }
+
+    it "does nothing when expires_at is nil" do
+      billboard.expires_at = nil
+      expect { billboard.check_and_handle_expiration }.not_to change { billboard.reload.approved }
+    end
+
+    it "does nothing when expires_at is in the future" do
+      billboard.expires_at = 1.day.from_now
+      expect { billboard.check_and_handle_expiration }.not_to change { billboard.reload.approved }
+    end
+
+    it "does nothing when billboard is not approved" do
+      billboard.update!(approved: false)
+      billboard.expires_at = 1.day.ago
+      expect { billboard.check_and_handle_expiration }.not_to change { billboard.reload.approved }
+    end
+
+    it "marks billboard as not approved when expired and currently approved" do
+      billboard.update_column(:expires_at, 1.day.ago)
+      expect { billboard.check_and_handle_expiration }.to change { billboard.reload.approved }.from(true).to(false)
+    end
+  end
+
+  describe "scopes" do
+    describe ".approved_and_published" do
+      let!(:active_billboard) { create(:billboard, approved: true, published: true) }
+      let!(:expired_billboard) { create(:billboard, approved: false, published: true, expires_at: 1.day.ago) }
+      let!(:future_expiry_billboard) { create(:billboard, approved: true, published: true, expires_at: 1.day.from_now) }
+
+      it "includes billboards with no expiration" do
+        expect(described_class.approved_and_published).to include(active_billboard)
+      end
+
+      it "excludes expired billboards" do
+        expect(described_class.approved_and_published).not_to include(expired_billboard)
+      end
+
+      it "includes billboards with future expiration" do
+        expect(described_class.approved_and_published).to include(future_expiry_billboard)
       end
     end
   end

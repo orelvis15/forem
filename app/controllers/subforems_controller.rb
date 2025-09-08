@@ -9,8 +9,7 @@ class SubforemsController < ApplicationController
   end
 
   def new
-    # Let's just not show the survey for now — still WIP
-    # @survey = Survey.find(ENV["SUBFOREM_SURVEY_ID"].to_i) if ENV["SUBFOREM_SURVEY_ID"].present?
+    @survey = Survey.find_by(id: ENV["SUBFOREM_SURVEY_ID"].to_i) if ENV["SUBFOREM_SURVEY_ID"].present?
   end
 
   def edit
